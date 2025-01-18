@@ -1,8 +1,8 @@
+import TaskCard from "@/components/module/tasks/TaskCard";
 import { selectFilter, selectTasks } from "@/Redux/features/task/taskSlice";
 import { useAppSelector } from "@/Redux/hooks";
 
 const Tasks = () => {
-
   const tasks = useAppSelector(selectTasks);
   const filter = useAppSelector(selectFilter);
   console.log(tasks);
@@ -10,7 +10,14 @@ const Tasks = () => {
 
   return (
     <div>
-      This is Tasks Page
+      <h2 className="text-3xl font-semibold">Tasks</h2>  
+      <div className="flex flex-col gap-6 mt-4">
+      {
+        tasks?.map((task) => (
+          <TaskCard key={task.id} task={task}/>
+        ))
+      }
+      </div>
     </div>
   );
 };

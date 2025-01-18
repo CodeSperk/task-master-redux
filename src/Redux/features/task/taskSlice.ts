@@ -20,10 +20,10 @@ const initialState : InitialState = {
     {
     id: "kdddjiej",
     title: "Create Github Repo",
-    description: "Create a Task Home page and routing",
+    description: "Create a Github repo to store and track code",
     dueDate: "2025-11",
     isCompleted: false,
-    priority: "High"
+    priority: "Medium"
   }
 ],
 filter: "all",
