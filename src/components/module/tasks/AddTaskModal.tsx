@@ -29,14 +29,20 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { CalendarIcon } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { format } from "date-fns"
+import { useAppDispatch } from "@/Redux/hooks";
+import { addTask } from "@/Redux/features/task/taskSlice";
+import { ITask } from "@/Types/types";
 
 export function AddTaskModal() {
   const form = useForm();
 
-  const onFormSubmit = (data) => {
+  const dispatch = useAppDispatch();
+
+  const onFormSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
+    dispatch(addTask(data as ITask));
   };
 
   return (

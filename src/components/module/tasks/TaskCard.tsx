@@ -14,9 +14,9 @@ const TaskCard = ({task} : IProps) => {
       <div className="flex justify-between">
       <div className="flex items-center gap-2">
         <div className={cn("size-3 rounded-full", {
-          "bg-green-500" : task.priority === "Low",
-          "bg-orange-500" : task.priority === "Medium",
-          "bg-yellow-500" : task.priority === "High",
+          "bg-green-500" : task.priority === "low",
+          "bg-orange-500" : task.priority === "medium",
+          "bg-yellow-500" : task.priority === "high",
         })}></div>
         <div>{task.title}</div>
       </div>
